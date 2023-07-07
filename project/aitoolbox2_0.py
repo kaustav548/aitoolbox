@@ -9,6 +9,10 @@ app = Flask(__name__)
 
 app.config["IMAGE_UPLOAD"] = "./static/uploaded"
 
+@app.route('/render')
+def render():
+    return render_template('index.html')
+
 @app.route('/upload', methods = ['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
